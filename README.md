@@ -17,7 +17,8 @@ git push 你的仓库
 Me：
 
 merge
-git pull
+git pull 本仓库
+hexo generate
 hexo deploy
 
 ```
