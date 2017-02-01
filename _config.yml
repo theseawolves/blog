@@ -6,7 +6,7 @@
 title: 1CodeLife
 subtitle:
 description:
-author: Quay
+author: Quay & LinLin
 language: zh-Hans
 timezone:
 
@@ -44,8 +44,10 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
+default_category: CSS定位
 category_map:
+  CSS定位
+  翻译
 tag_map:
 
 # Date / Time format
@@ -65,6 +67,8 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+baidu_analytics: 826cac467c757190b2c8aa720a31068d
+google_analytics: UA-91250021-1
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

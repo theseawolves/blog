@@ -2,19 +2,23 @@
 title: TCP/IP协议栈工作流1
 date: 2016-12-20 21:16:02
 tags:
+- tcp/ip
+categories:
+- tcp/ip
 ---
 
 转自[我的CSDN](http://blog.csdn.net/u012520854/article/details/53750338)
 ### 1、引子
 在C语言里，想要使用TCP/IP协议来实现一个客户端，必须要遵循以下步骤：
 #### 1）创建一个socket
-``` 
-int socket(int family, int type, int protocol) 
+```
+int socket(int family, int type, int protocol)
 ```
 函数需要三个参数，分别是协议族的编号，socket的类型，和具体的协议类型。如果初始化时还有印象的话，我们的TCP/IP协议族属于PF_INET,而TCP socket则属于STREAM_SOCK，protocol这个参数一般是0,使用系统中该socket默认的协议类型。如STREAM_SOCK对应的默认协议就是TCP协议。这里只是内核里面的宏，具体到函数库中，可能会有别的表现形式。
 函数执行完成，没有错误时，会返回一个int类型的变量，这个变量是socket的ID，与文件ID类似，后续的工作，都是通过对它的引用来开展的。
+<!--more-->
 #### 2）调用connect函数来连接到远程的服务器。
-``` 
+```
 int connect(int sockfd, const struct sockaddr * addr, socklen_t addrlen) ```
 sockfd 就是1）中生成的socket ID。
 addr 类型为struct sockaddr，用来描述一个socket的数据结构。这里addr表示要连接的远程服务器的socket描述，包括其服务器的IP地址和端口。
@@ -22,7 +26,7 @@ addr 类型为struct sockaddr，用来描述一个socket的数据结构。这里
 我感兴趣的是TCP/IP如何完成的这样的一个过程。有了前面的初始化的基础，梳理它的工作流程显得没有那么困难。
 ### 2、创建
 socket创建函数来自于一个glibc中，glibc是GNU版本的C函数库。C程序里的socket函数怎么到的系统调用，暂且不说。目前只需要最后进入内核的途径如下：
-``` 
+```
 sys_socketcall(call, args) 			net/socket.c 2004
 sys_socket(a0, a1, a[2])			net/socket.c 1202
 sock_create(family, type, protocol, &sock)	net/socket.c
@@ -84,7 +88,7 @@ inet_create(struct net *net, struct socket *sock, int protocol);
 269-262	判断参数type的类型。如果既不是SOCK_RAW又不是SOCK_DGRAM，又没有建议过ehash的话，就悄悄地建立了一个散列。也就是说TCP socket也是需要建立这个散列的。也就是SOCK_RAW和SOCK_DGRAM这两种类型是不需要这种散列的。如果前面初始化有印象的话，这里建立的散列是为有连接状态的socket建立的。SOCK_RAW和SOCK_DGRAM都是无状态连接，所以不需要。
 264	设置sock的状态为SS_UNCONNECTED，意为未连接。SS代表socket state。此时还没有创建完成，所以是未连接状态。
 270-289	同样是一个协议的查找过程。此时sock->type为SOCK_STREAM,所以最后检索到的answer如下：
-``` 
+```
 {
 913 		.type =       SOCK_STREAM,
 914 		.protocol =   IPPROTO_TCP,
