@@ -1,3 +1,10 @@
+---
+title: LVS配置详解
+date: 2017-2-13 22:52:10
+tags:
+- LVS
+categories:
+---
 # LVS配置命令理解1
 
 上周末对照着[Ubuntu LVS配置 ](http://blog.csdn.net/lihancheng/article/details/47152499)的教程初步熟悉了ubuntu下LVS的配置过程中。这对于想掌握其原理的人来说是不够的。
@@ -13,7 +20,7 @@ lo        Link encap:Local Loopback
           UP LOOPBACK RUNNING  MTU:65536  Metric:1
           RX packets:614 errors:0 dropped:0 overruns:0 frame:0
           TX packets:614 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1 
+          collisions:0 txqueuelen:1
           RX bytes:57615 (57.6 KB)  TX bytes:57615 (57.6 KB)
 
 wlp1s0    Link encap:Ethernet  HWaddr d0:57:7b:b0:a1:d0  
@@ -22,7 +29,7 @@ wlp1s0    Link encap:Ethernet  HWaddr d0:57:7b:b0:a1:d0
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:2241 errors:0 dropped:0 overruns:0 frame:0
           TX packets:1901 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
+          collisions:0 txqueuelen:1000
           RX bytes:1512337 (1.5 MB)  TX bytes:394920 (394.9 KB)
 ```
 其中lo为本地的回环接口。LVS配置过程中也要使用这个接口。可以得到我的局域网IP网络号为192.168.31.x。那么如下的命令可以为我的无线网卡添加一个虚拟IP。
@@ -38,7 +45,7 @@ lo        Link encap:Local Loopback
           UP LOOPBACK RUNNING  MTU:65536  Metric:1
           RX packets:672 errors:0 dropped:0 overruns:0 frame:0
           TX packets:672 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1 
+          collisions:0 txqueuelen:1
           RX bytes:65106 (65.1 KB)  TX bytes:65106 (65.1 KB)
 
 wlp1s0    Link encap:Ethernet  HWaddr d0:57:7b:b0:a1:d0  
@@ -47,7 +54,7 @@ wlp1s0    Link encap:Ethernet  HWaddr d0:57:7b:b0:a1:d0
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:3001 errors:0 dropped:0 overruns:0 frame:0
           TX packets:2249 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
+          collisions:0 txqueuelen:1000
           RX bytes:2382550 (2.3 MB)  TX bytes:459282 (459.2 KB)
 
 wlp1s0:1  Link encap:Ethernet  HWaddr d0:57:7b:b0:a1:d0  
