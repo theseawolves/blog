@@ -2,9 +2,13 @@
 title: 轻松理解CRC差错检测算法七-注解
 date: 2016-12-22 22:52:10
 tags:
+- 算法
 - CRC
+- 注解
 categories:
+- 算法
 - CRC
+author:Lin
 ---
 转自[我的CSDN](http://blog.csdn.net/u012520854/article/details/53821971)
 ### 第9部分的补充
