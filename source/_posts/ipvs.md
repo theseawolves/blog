@@ -1,9 +1,11 @@
 ---
-title: LVS配置详解
+title: LVS配置命令理解1
 date: 2017-2-13 22:52:10
 tags:
 - LVS
+- 服务器配置
 categories:
+- 系统运维
 ---
 # LVS配置命令理解1
 
@@ -11,6 +13,7 @@ categories:
 配置的命令有以下几条：
 ## ifconfig来为当前的网卡配置虚拟IP。
 其中同样通过在CSDN上搜索，可以知道，通过在eth0（网卡接口名称）后加“:n"，其中n为N+（正整数），就可以为网卡配置多个虚拟IP地址。这样的IP地址是不会有真实的数据经过它。
+<!--more-->
 比如我的电脑上只有一个无线网卡，用ifconfig命令得到的回显中，显示名称是wlps1s0。
 ```
 lin@lin-pc2:~/Documents/ops$ ifconfig

@@ -3,8 +3,12 @@ title: TCP/IP协议栈工作流1
 date: 2016-12-20 21:16:02
 tags:
 - tcp/ip
+- 操作系统
+- linux
 categories:
+- linux
 - tcp/ip
+author: Lin
 ---
 
 转自[我的CSDN](http://blog.csdn.net/u012520854/article/details/53750338)
