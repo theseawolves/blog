@@ -8,7 +8,7 @@ tags:
 categories:
 - 算法
 - CRC
-author:Lin
+author: Lin
 ---
 转自[我的CSDN](http://blog.csdn.net/u012520854/article/details/53821971)
 ### 第9部分的补充
