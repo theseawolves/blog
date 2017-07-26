@@ -18,6 +18,7 @@ Me：
 
 merge
 git pull 本仓库
+hexo server
 hexo generate
 hexo deploy
 
