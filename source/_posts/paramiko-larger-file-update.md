@@ -1,5 +1,5 @@
 ---
-title:Paramiko模块大文件上传 
+title:Paramiko模块大文件上传慢解决方法
 date: 2017-11-30 14:36:44
 tags: 
 - 编程学习
