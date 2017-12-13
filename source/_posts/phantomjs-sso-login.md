@@ -9,7 +9,7 @@ author: Lin
 ---
 
 # Intro
-## PhantoMJS加Cookie的流程
+## PhantomJS加Cookie的流程
 * 加载一个页面
 一般会选择目的页面。
 ```
