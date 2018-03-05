@@ -7,7 +7,7 @@ tags:
 author: Lin
 ---
 ## 1 简介
-[itextpdf]](https://github.com/itext/itextpdf) 是一款基于Java/.Net语言的专业的PDF处理工具，大多数场景下用于网站上在线生成PDF文档。网上可以找到很多PDF数据提取工具，但大多数只能简单的把PDF文档中的文字转换为纯文本，原有的PDF文档的排版，文档结构没有办法保留。工作中遇到一些场景，需要把PDF文档中的特定部分然后调用google翻译，翻译其中的一部分。现有的工具都没有办法满足需求。所以决定研究下itextpdf的源码，进行开发，提取想要的数据。
+[itextpdf](https://github.com/itext/itextpdf)是一款基于Java/.Net语言的专业的PDF处理工具，大多数场景下用于网站上在线生成PDF文档。网上可以找到很多PDF数据提取工具，但大多数只能简单的把PDF文档中的文字转换为纯文本，原有的PDF文档的排版，文档结构没有办法保留。工作中遇到一些场景，需要把PDF文档中的特定部分然后调用google翻译，翻译其中的一部分。现有的工具都没有办法满足需求。所以决定研究下itextpdf的源码，进行开发，提取想要的数据。
 
 ## 2 基本的例子
 在网上随便百度一下，找到的例子是这样的：利用itextpdf中的PdfTextExtractor对PDF内容的文本进行了提取。
