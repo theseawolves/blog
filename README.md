@@ -8,6 +8,8 @@ folk 本仓库 到 你的仓库
 git clone ...
 cd blog
 npm install
+
+git pull 
 hexo new "post title" //新建博客
 edit /source/_posts/[post title.md] //编辑博客
 hexo server //预览效果
@@ -18,6 +20,7 @@ Me：
 
 merge
 git pull 本仓库
+hexo server
 hexo generate
 hexo deploy
 

@@ -12,8 +12,7 @@ Paramiko是Python中用来实现SSH远程登录的模块.Github仓库地址为[h
 <!--more-->
 这时候Paramiko模块就显示出它的威力了。最近做项目就有这样的一个场景，需要将一个很大的文件上传到远程的服务器上，但通过Paramiko的Sftp模块上传时，上传速度超级慢。大概只有1M/s左右。而同样的主机上，使用Xftp或者WinWCP上传的速度可以达到30M/s。
 # 如何解决？
-首先还是上百度搜索，搜来搜去网上千篇一律地再介绍Paramiko怎么入坑？只有一个小哥在Chinaunix上问[链接](http://bbs.chinaunix.net/thread-4184699-1-1.html)，然而并没有
-人回答他。这让我很忧伤，本来就是用Python的人，我决定去看下源码。我上传文件时用的代码是这样的
+首先还是上百度搜索，搜来搜去网上千篇一律地再介绍Paramiko怎么入坑？只有一个小哥在Chinaunix上问[链接](http://bbs.chinaunix.net/thread-4184699-1-1.html)，然而并没有人回答他。这让我很忧伤，本来就是用Python的人，我决定去看下源码。我上传文件时用的代码是这样的
 ```
 sftp = ssh.open_sftp()
 sftp.put(local_file, remote_file, callback = upload_callback)
